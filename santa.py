@@ -94,8 +94,7 @@ def factor_pairs(prime_factorisation):
             prime ** factor for prime, factor in izip(primes, combo)
         ])
         factor2 = reduce( lambda x, y: x * y, [
-            prime ** (prime_factorisation[prime] - factor) 
-            for prime, factor in izip(primes, combo)
+            prime ** factor for prime, factor in izip(primes, inverse_combo) 
         ])
         pairs.add((factor1, factor2))
         if factor1 != factor2:
